@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кубраков Глеб Евгеньевич. Лабораторная 4</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+        div{
+            width: 300px;
+            height: 70px;
+            background-color: white;
+            border: 1px dotted darkgreen;
+            margin: 15px;
+            line-height: 70px;
+            text-align: center;
+        }
+        .position-relative{
+            position: relative;
+            left: -14px;
+            top: -45px;
+            z-index: 0;
+        }
+        .position-absolute{
+            position: absolute;
+            left: 300px;
+        }
+        .position-absolute:hover {
+                color: blue;
+                font-size: 20px;
+                text-shadow: 10px 10px 3px black;
+                transition: 0.5s;
+                block-size: 100px;
+                box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+                background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 4
+    </header>
+    <main>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-relative">relative</div>
+        <div>static</div>
+        <div>static</div>
+        <div class="position-absolute">absolute</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+        <div>static</div>
+    </main>
+    <footer>
+        &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
