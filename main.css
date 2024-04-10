@@ -43,3 +43,13 @@ a:hover{
 a:active{
     color: blueviolet;
 }
+div.menu{
+    border: 7px solid black;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+div.menu:hover{
+    background-color: green;
+    box-shadow: 0 0 15px;
+}
