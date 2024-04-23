@@ -8,16 +8,32 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon-16x16.png">
     <link rel="icon" href="favicon-32x32.png">
+    <script>
+        function showSum(){
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert("сумма "+ a + " и " + b + " равна "+ result);
+        }
+    </script>
+    <style>
+        .message{
+            width: 150px;
+            height: 30px;
+            background-color: black;
+            border-radius: 10px;
+            display: inline-block;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <header onclick="showAuthor()">
+    <header>
         НГТУ, ФБ, Лабораторная работа 5
     </header>
-    <ul>
-        <li><a href="arithmetic.html">arithmetic</a></li>
-    </ul>
     <main>
-
+        <div class="message" onclick="showSum()">Сколько будет 5154+7891?</div>
+        <div class="message">Узнать, кто автор страницы</div>
     </main>
     <footer>
         &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
