@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кубраков Глеб Евгеньевич. Лабораторная 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <script>
+        function Calculate() {
+            let input1 = document.getElementById('number1');
+            let input2 = document.getElementById('number2');
+            let input3 = document.getElementById('number3');
+            let input4 = document.getElementById('number4');
+            let input5 = document.getElementById('number5');
+            let cena = document.getElementById('cena');
+
+            let a = parseInt(input1.value);
+            let b = parseInt(input2.value);
+            let c = parseInt(input3.value);
+            let d = parseInt(input4.value);
+            let e = parseInt(input5.value);
+            let summ = a*100 + b*150 + c*50 + d*30 + e*80;
+            cena.innerHTML = 'Общая цена: ' + summ + ' рублей';
+        }
+        function Hide(num) {
+            document.getElementById('circle' + num).hidden = true;
+        }
+    </script>
+    <style>
+        .Korzina {
+            width: 280px;
+            height: 420px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(158, 6, 6);
+            padding: 2px 20px 20px 20px;
+            border-radius: 10px;
+        }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
+
+    <main>
+        <div class="Korzina">
+            <h1>Корзина товаров</h1>
+            <label>Яблоки (100 р/шт):<br><input type="number" id="number1" placeholder="сколько яблок?"></label><br><br>
+            <label>Апельсины (150 р/шт):<br><input type="number" id="number2" placeholder="сколько апельсин"></label><br><br>
+            <label>Виноград (50 р/шт):<br><input type="number" id="number3" placeholder="сколько винограда"></label><br><br>
+            <label>Бананы (30 р/шт):<br><input type="number" id="number4"placeholder="сколько бананов"></label><br><br>
+            <label>Груши (80 р/шт):<br><input type="number" id="number5"placeholder="сколько груш"></label><br><br>
+
+                <input type="button" value="Рассчитать" onclick="Calculate()">
+                <br><br>
+
+            <div id="cena"></div><br>
+        </div>
+    </main>
+
+    <footer onclick="showAuthor()">
+        &copy; Кубраков Глеб, ФБИ-22, 2 курс, 2024 
+    </footer>
+</body>
+</html>
