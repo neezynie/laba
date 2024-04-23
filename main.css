@@ -53,6 +53,7 @@ div.menu{
     border-radius: 5px;
     width: 300px;
     margin: 0 auto;
+    
 }
 div.menu:hover{
     background-color: green;
