@@ -1,54 +1,187 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Кубраков Глеб Евгеньевич. Лабораторная 5</title>
     <link rel="stylesheet" href="../main.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon-16x16.png">
-    <link rel="icon" href="favicon-32x32.png">
     <script>
-        function showSum(){
-            let inputA = document.getElementById("numberA")
-            let inputB = document.getElementById("numberB")
+        function showSum() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
             let a = parseInt(inputA.value);
             let b = parseInt(inputB.value);
             let result = a + b;
-            alert("сумма "+ a + " и " + b + " равна "+ result);
+            alert("Сумма " + a + ' и ' + b + " равна " + result);
         }
-        function showAuthor(){
-            let author = "автор страницы: \nКубраков Глеб Евгеньевич"
-            alert(author)
+        function showAuthor() {
+            let author = "Автор страницы:\nСтрельникова Алена Александровна\nДоброго дня!";
+            alert(author);
         }
-        function hello(){
-            let hello = "Приветствую вас, на своей странице"
-            alert(hello)
+        function showRazn() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a - b;
+            alert("Разность " + a + ' и ' + b + " равна " + result);
+        }
+        function showProizv() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a*b;
+            alert("Произведение " + a + ' и ' + b + " равно " + result);
+        }
+        function showDelen() {
+            let inputA = document.getElementById('numberA')
+            let inputB = document.getElementById('numberB')
+
+            let a = parseInt(inputA.value);
+            let b = parseInt(inputB.value);
+            let result = a/b;
+            alert("Результат деления " + a + ' и ' + b + " составляет " + result);
+        }
+        function changeOutput(buttonNum, backColor, textColor, borderColor, borderStyle, borderWidth) {
+            let output = document.getElementById('output');
+            output.innerHTML = 'Нажата кнопка ' + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderColor = borderColor;
+            output.style.borderStyle = borderStyle;
+            output.style.borderWidth = borderWidth;
+        }
+        function Calculate() {
+            let input1 = document.getElementById('number1');
+            let input2 = document.getElementById('number2');
+            let input3 = document.getElementById('number3');
+            let input4 = document.getElementById('number4');
+            let input5 = document.getElementById('number5');
+            let cena = document.getElementById('cena');
+
+            let a = parseInt(input1.value);
+            let b = parseInt(input2.value);
+            let c = parseInt(input3.value);
+            let d = parseInt(input4.value);
+            let e = parseInt(input5.value);
+            let summ = a*100 + b*150 + c*50 + d*30 + e*80;
+            cena.innerHTML = 'Общая цена: ' + summ + ' рублей';
+        }
+        function Hide(num) {
+            document.getElementById('circle' + num).hidden = true;
         }
     </script>
     <style>
-        .message{
-            width: 150px;
-            height: 30px;
-            background-color: black;
-            border-radius: 10px;
-            display: inline-block;
-            padding: 10px;
+        .shariki {
+            margin: 80px;
         }
+        .message {
+            cursor: pointer;
+            display: inline-block;
+            width: 220px;
+            height: 20px;
+            border-radius: 20px;
+            background-color: rgb(43, 134, 66);
+            text-align: center;
+            padding: 10px;
+            border-color: rgb(212, 39, 39);
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        .Korzina {
+            width: 280px;
+            height: 420px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: rgb(158, 6, 6);
+            padding: 2px 20px 20px 20px;
+            border-radius: 10px;
+        }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
+
+        .circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 70px;
+            border: 2px solid;
+            font-size: 20px;  
+            position: absolute;
+        }    
+
     </style>
 </head>
+
 <body>
     <header onclick="showAuthor()">
         НГТУ, ФБ, Лабораторная работа 5
     </header>
+
     <main>
         <label>Первое число: <input type="number" value="5154" id="numberA"></label><br>
         <label>Второе число: <input type="number" value="7891" id="numberB"></label><br>
-        <div class="message" onclick="showSum()">найти сумму чисел</div>
-        <div class="message" onclick="showAuthor()">Узнать,<br> кто автор страницы</div>
+        <div class="message" onclick="showSum()">Найти сумму чисел</div>
+        <div class="message" onclick="showAuthor()">Узнать, кто автор страницы</div>
+        <div class="message" onclick="showRazn()">Найти разность чисел</div>
+        <div class="message" onclick="showProizv()">Найти произведение</div>
+        <div class="message" onclick="showDelen()">Найти деление</div>
+
+        <div>
+            <input type="button" value="Кнопка 1" onclick="changeOutput(1, 'red', 'yellow', 'white', 'dashed', '3px')">
+            <input type="button" value="Кнопка 2" onclick="changeOutput(2, 'black', 'lime', 'red', 'double', '5px')">
+            <input type="button" value="Кнопка 3" onclick="changeOutput(3, 'blue', 'white', 'pink', 'solid', '3px')">
+            <input type="button" value="Кнопка 4" onclick="changeOutput(4, 'pink', 'black', 'blue', 'outset', '3px')">
+        </div>
+
+        <div id="output"></div>
+        <br>
+
+        <div class="Korzina">
+            <h1>Корзина товаров</h1>
+            <label>Яблоки (100 р/шт):<br><input type="number" id="number1"></label><br><br>
+            <label>Апельсины (150 р/шт):<br><input type="number" id="number2"></label><br><br>
+            <label>Виноград (50 р/шт):<br><input type="number" id="number3"></label><br><br>
+            <label>Бананы (30 р/шт):<br><input type="number" id="number4"></label><br><br>
+            <label>Груши (80 р/шт):<br><input type="number" id="number5"></label><br><br>
+
+                <input type="button" value="Рассчитать" onclick="Calculate()">
+                <br><br>
+
+            <div id="cena"></div><br>
+        </div>
+        <br>
+
+        <div>
+            <input type="button" id='circle1' value="1" class="circle" style='color: rgb(141, 11, 11); left: 500px; background-color: rgb(203, 188, 218);' onclick="Hide('1')">
+            <input type="button" id='circle2' value="2" class="circle" style='color: rgb(141, 11, 11); left: 560px; background-color: rgb(217, 253, 253);' onclick="Hide('2')">
+            <input type="button" id='circle3' value="3" class="circle" style='color: rgb(141, 11, 11); left: 620px; background-color: rgb(239, 255, 167);' onclick="Hide('3')">
+            <input type="button" id='circle4' value="4" class="circle" style='color: rgb(141, 11, 11); left: 680px; background-color: rgb(255, 180, 232);' onclick="Hide('4')">
+            <input type="button" id='circle5' value="5" class="circle" style='color: rgb(141, 11, 11); left: 740px; background-color: rgb(255, 235, 121);' onclick="Hide('5')">
+            <input type="button" id='circle6' value="6" class="circle" style='color: rgb(141, 11, 11); left: 800px; background-color: rgb(251, 149, 255);' onclick="Hide('6')">
+            <input type="button" id='circle7' value="7" class="circle" style='color: rgb(141, 11, 11); left: 860px; background-color: rgb(233, 233, 233);' onclick="Hide('7')">
+            <input type="button" id='circle8' value="8" class="circle" style='color: rgb(141, 11, 11); left: 920px; background-color: rgb(235, 236, 255);' onclick="Hide('8')">
+            <input type="button" id='circle9' value="9" class="circle" style='color: rgb(141, 11, 11); left: 980px; background-color: rgb(198, 255, 211);' onclick="Hide('9')">
+            <input type="button" id='circle10' value="10" class="circle" style='color: rgb(141, 11, 11); left: 1040px; background-color: rgb(219, 219, 219);' onclick="Hide('10')">
+        </div>
+        <div class="shariki">
+        </div>
+
+        
     </main>
-    <footer ondblclick="hello()">
-        &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
+
+    <footer onclick="showAuthor()">
+        &copy; Кубраков Глеб, ФБИ-22, 2 курс, 2024
     </footer>
 </body>
 </html>
