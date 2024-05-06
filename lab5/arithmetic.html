@@ -18,7 +18,7 @@
             alert("Сумма " + a + ' и ' + b + " равна " + result);
         }
         function showAuthor() {
-            let author = "Автор страницы:\nСтрельникова Алена Александровна\nДоброго дня!";
+            let author = "Автор страницы:\nКубраков Глеб Евгеньевич\nДоброго дня!";
             alert(author);
         }
         function showRazn() {
@@ -78,9 +78,6 @@
         }
     </script>
     <style>
-        .shariki {
-            margin: 80px;
-        }
         .message {
             cursor: pointer;
             display: inline-block;
@@ -94,32 +91,11 @@
             border-style: solid;
             border-width: 1px;
         }
-
-        .Korzina {
-            width: 280px;
-            height: 420px;
-            border-style: solid;
-            border-width: 1px;
-            border-color: rgb(158, 6, 6);
-            padding: 2px 20px 20px 20px;
-            border-radius: 10px;
-        }
-
         #output {
             border: 1px solid;
             width: 300px;
             height: 40px;
         }
-
-        .circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 70px;
-            border: 2px solid;
-            font-size: 20px;  
-            position: absolute;
-        }    
-
     </style>
 </head>
 
@@ -147,37 +123,8 @@
         <div id="output"></div>
         <br>
 
-        <div class="Korzina">
-            <h1>Корзина товаров</h1>
-            <label>Яблоки (100 р/шт):<br><input type="number" id="number1"></label><br><br>
-            <label>Апельсины (150 р/шт):<br><input type="number" id="number2"></label><br><br>
-            <label>Виноград (50 р/шт):<br><input type="number" id="number3"></label><br><br>
-            <label>Бананы (30 р/шт):<br><input type="number" id="number4"></label><br><br>
-            <label>Груши (80 р/шт):<br><input type="number" id="number5"></label><br><br>
-
-                <input type="button" value="Рассчитать" onclick="Calculate()">
-                <br><br>
-
-            <div id="cena"></div><br>
-        </div>
+       
         <br>
-
-        <div>
-            <input type="button" id='circle1' value="1" class="circle" style='color: rgb(141, 11, 11); left: 500px; background-color: rgb(203, 188, 218);' onclick="Hide('1')">
-            <input type="button" id='circle2' value="2" class="circle" style='color: rgb(141, 11, 11); left: 560px; background-color: rgb(217, 253, 253);' onclick="Hide('2')">
-            <input type="button" id='circle3' value="3" class="circle" style='color: rgb(141, 11, 11); left: 620px; background-color: rgb(239, 255, 167);' onclick="Hide('3')">
-            <input type="button" id='circle4' value="4" class="circle" style='color: rgb(141, 11, 11); left: 680px; background-color: rgb(255, 180, 232);' onclick="Hide('4')">
-            <input type="button" id='circle5' value="5" class="circle" style='color: rgb(141, 11, 11); left: 740px; background-color: rgb(255, 235, 121);' onclick="Hide('5')">
-            <input type="button" id='circle6' value="6" class="circle" style='color: rgb(141, 11, 11); left: 800px; background-color: rgb(251, 149, 255);' onclick="Hide('6')">
-            <input type="button" id='circle7' value="7" class="circle" style='color: rgb(141, 11, 11); left: 860px; background-color: rgb(233, 233, 233);' onclick="Hide('7')">
-            <input type="button" id='circle8' value="8" class="circle" style='color: rgb(141, 11, 11); left: 920px; background-color: rgb(235, 236, 255);' onclick="Hide('8')">
-            <input type="button" id='circle9' value="9" class="circle" style='color: rgb(141, 11, 11); left: 980px; background-color: rgb(198, 255, 211);' onclick="Hide('9')">
-            <input type="button" id='circle10' value="10" class="circle" style='color: rgb(141, 11, 11); left: 1040px; background-color: rgb(219, 219, 219);' onclick="Hide('10')">
-        </div>
-        <div class="shariki">
-        </div>
-
-        
     </main>
 
     <footer onclick="showAuthor()">

@@ -24,8 +24,21 @@
             let summ = a*100 + b*150 + c*50 + d*30 + e*80;
             cena.innerHTML = 'Общая цена: ' + summ + ' рублей';
         }
-        function Hide(num) {
-            document.getElementById('circle' + num).hidden = true;
+        function clearFields(){
+            let input1 = document.getElementById('number1');
+            let input2 = document.getElementById('number2');
+            let input3 = document.getElementById('number3');
+            let input4 = document.getElementById('number4');
+            let input5 = document.getElementById('number5');
+            let cena = document.getElementById('cena');
+
+            input1.value = '';
+            input2.value = '';
+            input3.value = '';
+            input4.value = '';
+            input5.value = '';
+            cena.innerHTML = '';
+
         }
     </script>
     <style>
@@ -57,13 +70,14 @@
     <main>
         <div class="Korzina">
             <h1>Корзина товаров</h1>
-            <label>Яблоки (100 р/шт):<br><input type="number" id="number1" placeholder="сколько яблок?"></label><br><br>
-            <label>Апельсины (150 р/шт):<br><input type="number" id="number2" placeholder="сколько апельсин"></label><br><br>
-            <label>Виноград (50 р/шт):<br><input type="number" id="number3" placeholder="сколько винограда"></label><br><br>
-            <label>Бананы (30 р/шт):<br><input type="number" id="number4"placeholder="сколько бананов"></label><br><br>
-            <label>Груши (80 р/шт):<br><input type="number" id="number5"placeholder="сколько груш"></label><br><br>
+            <label>Яблоки (100 р/шт):<br><input type="number" id="number1" placeholder="сколько яблок?" min="0"></label><br><br>
+            <label>Апельсины (150 р/шт):<br><input type="number" id="number2" placeholder="сколько апельсин" min="0"></label><br><br>
+            <label>Виноград (50 р/шт):<br><input type="number" id="number3" placeholder="сколько винограда" min="0"></label><br><br>
+            <label>Бананы (30 р/шт):<br><input type="number" id="number4"placeholder="сколько бананов" min="0"></label><br><br>
+            <label>Груши (80 р/шт):<br><input type="number" id="number5"placeholder="сколько груш" min="0"></label><br><br>
 
                 <input type="button" value="Рассчитать" onclick="Calculate()">
+                <input type="button" value="Очистить" onclick="clearFields()">
                 <br><br>
 
             <div id="cena"></div><br>
