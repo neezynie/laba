@@ -1,15 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Круги</title>
     <link rel="stylesheet" href="../main.css">
 </head>
+<style>
+    .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        position: absolute;
+        transition: all 0.5s ease-in-out;
+      
+    }
+  </style>
 <body>
+    <button id="resetButton">Обновить</button>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 5
+    </header>
     <footer>
         &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
     </footer>
+    <script>
+        const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'purple', 'pink', 'brown'];
+      
+        for (let i = 0; i < 10; i++) {
+          const circle = document.createElement('div');
+          circle.className = 'circle';
+          circle.textContent = i + 1;
+          circle.style.backgroundColor = colors[i % colors.length];
+          circle.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
+          circle.style.top = `${Math.random() * (window.innerHeight - 100)}px`;
+          circle.addEventListener('click', function() {
+            this.style.width = '0';
+            this.style.height = '0';
+            this.style.opacity = '0';
+          });
+          document.body.appendChild(circle);
+        }
+        document.getElementById('resetButton').addEventListener('click', function() {
+            const circles = document.querySelectorAll('.circle');
+            circles.forEach(circle => {
+                circle.style.width = '100px';
+                circle.style.height = '100px';
+                circle.style.opacity = '1';
+    });
+  });
+      </script>
 </body>
 </html>
