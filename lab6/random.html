@@ -17,7 +17,11 @@
             padding: 20px; /* Внутренние отступы */
             /* Другие свойства, такие как цвет фона, шрифт, высота и т.д. */
             display: block;
+            text-align: center;
             }
+        .rules{
+            text-align: center;
+        }
     </style>
     <script>
         let number;
@@ -64,6 +68,19 @@
             screens[0].style.display = "block"
             screens[2].style.display = "none"
         }
+        function toggleRules() {
+            var help = document.getElementById("help");
+            var rules = document.getElementById("rules");
+            var button = help.getElementsByTagName("button")[0];
+
+            if (rules.style.display === "none") {
+                rules.style.display = "block";
+                button.innerHTML = "Скрыть правила игры";
+            } else {
+                rules.style.display = "none";
+                button.innerHTML = "Показать правила игры";
+            }
+        }
     </script>
 </head>
 <body>
@@ -76,6 +93,18 @@
             <button onclick="startGame()">
                 Сыграть в игру
             </button>
+        </div>
+        <div id="help" style="display: block; text-align: center;">
+            <button onclick="toggleRules()">Показать правила игры</button>
+            <div id="rules" style="display: none;">
+                <ol type="I">
+                    <li>Нельзя пользоваться интернетом при использование игрыыы))</li>
+                    <li>В игре присутствуют некоторые правила</li>
+                    <li>Если вы угадали число с 1 раза можете поучавствовать в конкурсе на новенький айфон 5s</li>
+                    <li>При нажатии на кнопку сыграть вы автоматически принимаете условия пользовательского соглашения</li>
+                    <li>Не надо со мной спорить!</li>
+                </ol>
+            </div>
         </div>
         <div class="game" style="display: none;">
             <h1>Угадай число!</h1>
