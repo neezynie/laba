@@ -15,7 +15,31 @@
             let wear = document.getElementById("wear")
             
             if(color == "Красный" && type == "Футболка"){
-                wear.src = ""
+                wear.src = "red_fyt.jpg"
+            }
+            else if(color == "Красный" && type == "Поло"){
+                wear.src = "red_polo.jpg"
+            }
+            else if(color == "Красный" && type == "Майка"){
+                wear.src = "red_maika.png"
+            }
+            else if(color == "Черный" && type == "Футболка"){
+                wear.src = "blac_fyt.jpg"
+            }
+            else if(color == "Черный" && type == "Поло"){
+                wear.src = "black_polo.jpg"
+            }
+            else if(color == "Черный" && type == "Майка"){
+                wear.src = "black_maika.jpg"
+            }
+            else if(color == "Белый" && type == "Майка"){
+                wear.src = "white_maika.jpg"
+            }
+            else if(color == "Белый" && type == "Поло"){
+                wear.src = "white_polo.jpg"
+            }
+            else if(color == "Белый" && type == "Футболка"){
+                wear.src = "white_fytbolka.jpg"
             }
         }
     </script>
@@ -38,7 +62,7 @@
                 <option>Поло</option>
                 <option>Майка</option>
             </select><br>
-            <button>ok</button><br>
+            <button onclick="filter()">ok</button><br>
             <img id="wear">
         </div>
             
