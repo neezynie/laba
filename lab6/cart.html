@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Корзина</title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <style>
+        .korzina { 
+            width: 500px;
+            height: 500px;
+            background-color: white;
+            border: 3px solid;
+            display: inline-block;
+            border-radius: 5px;
+            text-align: center;
+            position: absolute;
+            top: 100px;
+            left: 300px;
+            padding: 50px;
+        }
+        </style>
+            
+        <script>
+            function Summ() {
+                let inputA = document.getElementById('numberA');
+                let inputB = document.getElementById('numberB');
+                let inputC = document.getElementById('numberC');
+                let inputD = document.getElementById('numberD');
+                let inputE = document.getElementById('numberE');
+                let inputF = document.getElementById('numberF'); 
+                let balanceInput = document.getElementById('balance');
+
+                let a = parseInt(inputA.value);
+                let b = parseInt(inputB.value);
+                let c = parseInt(inputC.value);
+                let d = parseInt(inputD.value);
+                let e = parseInt(inputE.value); 
+                let f = parseInt(inputF.value); 
+                let balance = parseFloat(balanceInput.value);
+
+                if (isNaN(a)) a = 0;
+                if (isNaN(b)) b = 0;
+                if (isNaN(c)) c = 0;
+                if (isNaN(d)) d = 0;
+                if (isNaN(e)) e = 0; 
+                if (isNaN(f)) f = 0; 
+                if (isNaN(balance)) balance = 0;
+
+                let result = a * 25 + b * 30 + c * 40 + d * 55 + e * 2000 + f * 3000; 
+
+                if (result == 0) document.getElementById('sum').innerHTML = "Для расчета выберите хотя бы один товар";
+                else if (result < 0) document.getElementById('sum').innerHTML = "Вы ввели отрицательные значения";
+                else if (result > balance) document.getElementById('sum').innerHTML = "Недостаточно средств!";
+                else document.getElementById('sum').innerHTML = 'Сумма продуктов = ' + result + ' рублей';
+            }
+    
+            function nul() {
+                document.getElementById('numberA').value = '';
+                document.getElementById('numberB').value = '';
+                document.getElementById('numberC').value = '';
+                document.getElementById('numberD').value = '';
+                document.getElementById('numberE').value = ''; 
+                document.getElementById('numberF').value = ''; 
+                document.getElementById('balance').value = '';
+                document.getElementById('sum').innerHTML = '';
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 6
+        </header>
+
+        <main>
+            <div class="korzina">
+                <h1>Корзина товаров</h1>
+                <h2>Ваш баланс</h2>
+                <input type="number" id="balance" placeholder="Введите ваш баланс" min="0">
+                <table>
+                    <tr>
+                        <th>Товар</th>
+                        <th>Цена</th>
+                        <th>Количество</th>
+                    </tr>
+                    <tr>
+                        <td>Картошка</td>
+                        <td>25р/штука</td>
+                        <td><input type="number" id="numberA" placeholder="Введите кол-во в штуках" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Лук</td>
+                        <td>30р/штука</td>
+                        <td><input type="number" id="numberB" placeholder="Введите кол-во в штуках" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Печенье</td>
+                        <td>40р</td>
+                        <td><input type="number" id="numberC" placeholder="Введите кол-во в пачках" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Вода</td>
+                        <td>55р бутылка</td>
+                        <td><input type="number" id="numberD" placeholder="Введите кол-во в бутылках" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Мясо</td>
+                        <td>2000р/кг</td>
+                        <td><input type="number" id="numberE" placeholder="Введите кол-во в кг" min="0"></td>
+                    </tr>
+                    <tr>
+                        <td>Мышка</td>
+                        <td>3000р</td>
+                        <td><input type="number" id="numberF" placeholder="Введите кол-во в штуках" min="0"></td>
+                    </tr>
+                    
+                </table>
+                <input type="button" value="Рассчитать сумму" onclick="Summ()">
+                <input type="button" value="Очистить" onclick="nul()"><br>
+                <label id="sum"></label>
+            </div>
+        </main>
+
+        <footer> 
+            &copy; Кубраков Глеб, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
+</html>
