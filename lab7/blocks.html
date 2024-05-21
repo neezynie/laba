@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кубраков Глеб Евгеньевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+        div {
+            border: 10px solid rgb(70, 45, 232);
+            border-radius: 10%;
+            margin: 20px auto;
+            padding: 10px;
+            align-self: center;
+            display: block;
+            width: 50% ;
+            text-align: center;
+        }
+        button{
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function addNewBlock() {
+            let newBlock = document.createElement('div');
+            newBlock.style.background = 'green';
+            newBlock.style.height = '40px';
+
+            document.querySelector('main').append(newBlock);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+
+    <main>
+        <button onclick="addNewBlock()">Добавить блок</button>
+    </main>
+    <footer>
+        &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
