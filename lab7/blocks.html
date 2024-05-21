@@ -46,6 +46,18 @@
                 width += 1; 
             }
         }
+        function add20_50() {
+                let main = document.querySelector('main');
+                for(let i = 20; i <=50; i+=2.5) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '50px';
+                    newBlock.style.height = '50px'; 
+                    newBlock.style.backgroundColor = 'white';
+                    newBlock.style.color = 'orange'; 
+                    newBlock.innerHTML = `${i}`;
+                    main.appendChild(newBlock);
+                }
+            }
     </script>
 </head>
 
@@ -57,7 +69,8 @@
     <main>
         <button onclick="addNewBlock()">Добавить блок</button><br>
         <input type="number" id="numberOfBlocks" value="10"><br>
-        <button onclick="addNewBlocks()">Добавить блоки</button>
+        <button onclick="addNewBlocks()">Добавить блоки</button><br>
+        <button onclick="add20_50()">20=>50</button><br>
     </main>
     <footer>
         &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
