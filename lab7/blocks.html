@@ -16,7 +16,6 @@
             padding: 10px;
             align-self: center;
             display: block;
-            width: 50% ;
             text-align: center;
         }
         button{
@@ -28,8 +27,24 @@
             let newBlock = document.createElement('div');
             newBlock.style.background = 'green';
             newBlock.style.height = '40px';
+            newBlock.style.width = '50%'; // Установка начальной ширины
 
             document.querySelector('main').append(newBlock);
+        }
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let width = 10;
+            let numberOfBlocks = document.getElementById('numberOfBlocks').value;
+            for(let i=0; i<numberOfBlocks;i++){
+                let newBlock = document.createElement('div');
+                newBlock.style.background = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.width = `${width}%`; 
+                newBlock.innerHTML = `Блок номер ${i}: 2 * ${i} <sup>2</sup> = ${2 * i**2}`; 
+
+                main.appendChild(newBlock);
+                width += 1; 
+            }
         }
     </script>
 </head>
@@ -40,7 +55,9 @@
     </header>
 
     <main>
-        <button onclick="addNewBlock()">Добавить блок</button>
+        <button onclick="addNewBlock()">Добавить блок</button><br>
+        <input type="number" id="numberOfBlocks" value="10"><br>
+        <button onclick="addNewBlocks()">Добавить блоки</button>
     </main>
     <footer>
         &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
