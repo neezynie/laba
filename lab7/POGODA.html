@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кубраков Глеб Евгеньевич. Лабораторная 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png">
+    <link rel="icon" href="favicon-32x32.png">
+    <style>
+        .pogod{
+            border: 1px solid black;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: aquamarine;
+            justify-content: center;
+            text-align: center;
+            display: block;
+        }
+        .pogod1{
+            border: 1px solid black;
+            padding: 10px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            const url = "https://api.open-meteo.com/v1/forecast?latitude=55.0415&longitude=82.9346&hourly=temperature_2m&timezone=Asia%2FBangkok"
+
+            fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const times = data.hourly.time;
+                const temperatures = data.hourly.temperature_2m;
+
+                const today = new Date().toISOString().slice(0, 10);
+                const eightOClockIndex = times.indexOf(today + 'T08:00');
+                const twelveDaysIndex = times.indexOf(today + 'T12:00');
+                const eightyPmIndex = times.indexOf(today + 'T20:00');
+
+                document.getElementById('eight-o-clock').innerHTML = temperatures[eightOClockIndex] + ' °C';
+                document.getElementById('twelve-days').innerHTML = temperatures[twelveDaysIndex] + ' °C';
+                document.getElementById('eighty-pm').innerHTML = temperatures[eightyPmIndex] + ' °C';
+            })
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</head>
+<body>
+    <header onclick="showAuthor()">
+        НГТУ, ФБ, Лабораторная работа 7
+    </header>
+    <main>
+        <div class="pogod">Температура В Новосибирске
+            <div class="pogod1">
+                <p>Температура в 8:00: <span id="eight-o-clock"></span></p>
+                <p>Температура в 12:00: <span id="twelve-days"></span></p>
+                <p>Температура в 20:00: <span id="eighty-pm"></span></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
+    </footer>
+</body>
+</html>
