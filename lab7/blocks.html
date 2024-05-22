@@ -10,7 +10,7 @@
     <link rel="icon" href="favicon-32x32.png">
     <style>
         div {
-            border: 10px solid rgb(70, 45, 232);
+            border: 10px solid rgb(0, 0, 0);
             border-radius: 10%;
             margin: 20px auto;
             padding: 10px;
@@ -75,6 +75,21 @@
                     main.appendChild(newBlock);
                 }
             }
+            function Opacity_block() {
+                let main = document.querySelector('main');
+                for(let i = 10; i <=100; i+=10) {
+                    let newBlock = document.createElement('div');
+                    newBlock.style.width = '50px';
+                    newBlock.style.height = '50px'; 
+                    newBlock.style.color = 'green'; 
+                    newBlock.style.fontSize = '20px'; 
+                    newBlock.style.opacity = i + '%';
+                    newBlock.style.backgroundColor = 'white'; 
+                    newBlock.innerHTML = `${i / 10}`;
+
+                    main.appendChild(newBlock);
+                }
+            }
     </script>
 </head>
 
@@ -89,6 +104,7 @@
         <button onclick="addNewBlocks()">Добавить блоки</button><br>
         <button onclick="add20_50()">20=>50</button><br>
         <button onclick="add10_80()">10 => -80</button><br>
+        <button onclick="Opacity_block()">Полупрозрачные блоки</button><br>
     </main>
     <footer>
         &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
