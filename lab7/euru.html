@@ -45,7 +45,7 @@
                         <p>Текущий курс евро: ${json.Valute.EUR.Value.toFixed(2)} руб.</p>
                         <p>Дата запроса: ${(json.Date).slice(0, 10)}</p>
                         <p>Курс за прошлую дату: ${json.Valute.EUR.Previous.toFixed(2)} руб.</p>
-                        <p>Разница: ${json.Valute.EUR.Value - json.Valute.EUR.Previous > 0 ? 'Курс поднялся' : 'Курс опустился'}</p>
+                        <p>Разница: ${json.Valute.EUR.Value - json.Valute.EUR.Previous > 0 ? 'Поднялся курс' : 'Опустился курс'}</p>
                     `;
                 });
         }
