@@ -8,16 +8,28 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon-16x16.png">
     <link rel="icon" href="favicon-32x32.png">
+    <script src="time.js"></script>
+    <style>
+        #time{
+            margin-left: 1750px;
+        }
+        #time1{
+            font-size: 48px; /* Increase the font size for larger display */
+            color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+    </style>
 </head>
-<body>
+<body onload="showTime()">
     <header onclick="showAuthor()">
-        НГТУ, ФБ, Лабораторная работа 7
+        НГТУ, ФБ, Лабораторная работа 8
+        <div id="time">00:00:00</div>
     </header>
-    <ul>
-        <li><a href="date.html">Дата</a></li>
-        <li><a href="get-days-count.html">Число дней с даты рождения</a></li>
-        <li><a href="time.html">Время</a></li>
     <main>
+        <div id="time1"></div>
     </main>
     <footer>
         &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
