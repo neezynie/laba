@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кубраков Глеб Евгеньевич. Лабораторная 8</title>
-    <link rel="stylesheet" href="../main.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon-16x16.png">
-    <link rel="icon" href="favicon-32x32.png">
-    <script src="time.js"></script>
-    <style>
-        #time{
-            margin-left: 1750px;
-        }
-        #time1{
-            font-size: 48px; /* Increase the font size for larger display */
-            color: #333;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-    </style>
-</head>
-<body onload="showTime()">
-    <header onclick="showAuthor()">
-        НГТУ, ФБ, Лабораторная работа 8
-        <div id="time">00:00:00</div>
-    </header>
-    <main>
-        <div id="time1"></div>
-    </main>
-    <footer>
-        &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024
-    </footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Кубраков Глеб Евгеньевич. Лабораторная работа 8 </title>
+        <link rel="stylesheet" href="../main.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="../favicon-16x16.png">
+        <link rel="shortcut icon" href="../favicon-32x32.png">
+        <script src="time.js"></script>
+        <style>
+            #time2 {
+                font-size: 400px;
+            }
+
+            #Vremy {
+                width: 5px;
+                height: 100px;
+                background-color: black;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .clock {
+                border: 10px black;
+                background-color: aliceblue;
+                width: 200px;
+                height: 200px;
+                border-radius: 100%;
+                display: flex; 
+                align-items: center;
+                justify-content: center; 
+                position: relative;
+            }
+            .stick {
+                position: absolute;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+
+    <body onload='showTime()'>
+        <header>
+            НГТУ, ФБ, Лабораторная работа 8
+            <div id="time">00:00:00</div>
+        </header>
+
+        <main>
+            <div id="time1"></div>
+
+            <div class="clock">
+                <div id="Vremy"></div>
+                <div class="stick" style="top: 1px; left: 90px;">60</div>
+                <div class="stick" style="top: 85px; left: 170px;">15</div>
+                <div class="stick" style="top: 180px; left: 90px;">30</div>
+                <div class="stick" style="top: 90px; left: 10px;">45</div>
+            </div>
+        </main>
+
+        <footer> 
+            &copy; Кубраков Глеб, ФБИ-22, 2 курс, 2024
+        </footer>
+    </body>
 </html>
