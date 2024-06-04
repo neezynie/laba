@@ -28,6 +28,17 @@
             <p id="date"></p>
             <p id="day"></p>
         </div>
+        <label for="day-input">День:</label>
+        <input type="number" id="day-input" min="1" max="31" required>
+
+        <label for="month-input">Месяц:</label>
+        <input type="number" id="month-input" min="1" max="12" required>
+
+        <label for="year-input">Год:</label>
+        <input type="number" id="year-input" min="1900" max="2100" required>
+
+        <button onclick="showDayOfWeek()">День недели</button>
+        
     </main>
     <footer>
         &copy;; Кубраков Глеб, ФБИ-22, 2 курс, 2024

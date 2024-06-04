@@ -18,6 +18,18 @@ function showDate(){
     document.getElementById('date').textContent = 'Текущая дата: ' + date;
     document.getElementById('day').textContent = 'День недели: ' + day;
 }
+function showDayOfWeek() {
+    var day = document.getElementById('day-input').value;
+    var month = document.getElementById('month-input').value - 1; // Месяца в объекте Date начинаются с 0, поэтому отнимаем 1
+    var year = document.getElementById('year-input').value;
+
+    var date = new Date(year, month, day);
+
+    var daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+    var dayOfWeek = daysOfWeek[date.getDay()];
+
+    document.getElementById('day').textContent = 'День недели: ' + dayOfWeek;
+}
 
 
 
